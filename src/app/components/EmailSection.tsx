@@ -28,7 +28,7 @@ const EmailSection: React.FC = () => {
     };
 
     const response = await fetch(endpoint, options);
-    const resData = await response.json();
+    //const resData = await response.json();
 
     if (response.status === 200) {
       console.log("Message sent.");

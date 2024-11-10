@@ -14,7 +14,6 @@ interface Achievement {
   metric: string;
   value: string;
   postfix?: string;// Optional since not all achievements have a postfix
-  configs?:any;
 }
 
 const achievementsList: Achievement[] = [
