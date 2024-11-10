@@ -13,7 +13,8 @@ interface Achievement {
   prefix?: string; // Optional since not all achievements have a prefix
   metric: string;
   value: string;
-  postfix?: string; // Optional since not all achievements have a postfix
+  postfix?: string;// Optional since not all achievements have a postfix
+  configs?:any;
 }
 
 const achievementsList: Achievement[] = [
@@ -50,18 +51,12 @@ const AchievementsSection: React.FC = () => {
               <h2 className="text-white text-4xl font-bold flex flex-row">
                 {achievement.prefix}
                 <AnimatedNumbers
-              includeComma
-              animateToNumber={parseInt(achievement.value.replace(/,/g, ''))} // Remove commas for parsing
-              locale="en-US"
-              className="text-white text-4xl font-bold"
-              configs={(_: any, index: number) => {
-                return {
-                  mass: 1,
-                  friction: 100,
-                  tensions: 140 * (index + 1),
-                };
-              }}
-            />
+               includeComma
+               animateToNumber={parseInt(achievement.value.replace(/,/g, ''))} // Remove commas for parsing
+               locale="en-US"
+               className="text-white text-4xl font-bold"
+           />    
+            
             {achievement.postfix}
           </h2>
           <p className="text-[#ADB7BE] text-base">{achievement.metric}</p>
